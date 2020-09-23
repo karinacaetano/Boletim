@@ -1,9 +1,7 @@
 ﻿using Boletim.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-
 namespace Boletim.Controllers
-
 {
     [ApiController]
     [Route("Aluno")]

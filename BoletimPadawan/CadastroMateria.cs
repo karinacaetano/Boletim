@@ -25,20 +25,22 @@ namespace BoletimPadawan
             // não digitar zerada 
 
             Console.Write("\nData do Cadastro: ");
-            materia.DataCadastro = Convert.ToDateTime(Console.ReadLine());
-            while (!Aluno.VerificaData(materia.DataCadastro))
+            var auxData = Convert.ToDateTime(Console.ReadLine());
+            while (!Materia.VerificaData( auxData))
             {
                 Console.Write("a data do cadastro não pode ser posterior a atual" +
                     "! \nDigite novamente! \nData: ");
-                materia.DataCadastro = Convert.ToDateTime(Console.ReadLine());
+                auxData = Convert.ToDateTime(Console.ReadLine());
             }
-            Console.WriteLine(materia.DataCadastro);
+            Console.WriteLine(auxData);
+
+
 
             Console.Write("Situação: ");
             var auxSituacao = Console.ReadLine();
-            while (!Materia.VerificaDescricao(auxSituacao) || auxSituacao == null)
+            while (!Materia.VerificaSituacao (auxSituacao) || auxSituacao == null)
             {
-                Console.Write("A situação precisa ser \"Ativa\" ou \"Inativa\" \nDigite novamente! \nNome: ");
+                Console.Write("A situação precisa ser \"Ativa\" ou \"Inativa\" \nDigite novamente! \nSituação: ");
                 auxDescricao = Console.ReadLine();
             }
             Console.WriteLine(auxDescricao);

@@ -21,10 +21,11 @@ namespace Boletim.Models
 
         public static bool VerificaNome(string nome)
         {// nao ta funcionando
-            Regex rx = new Regex(@"[a-zA-Z\u00C0-\u00FF ]+");
+            Regex rx = new Regex(@"^[ a-zA-Z á]*$");
+            //Regex rx = new Regex(@"[a-zA-Z\u00C0-\u00FF ]+");
             return rx.IsMatch(nome);
         }
-
+        
         public bool VerificaCurso (string situacaoCurso)
         {    // vendo se o curso está ativo
             // mudar pra classe curso?

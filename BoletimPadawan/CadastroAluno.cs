@@ -7,38 +7,41 @@ namespace BoletimPadawan
     {
         public static void Cadastro()
         {
-            var aluno = new Aluno();
-            Aluno.CadastroAluno();
+            //var aluno = new Aluno();
+            //Aluno.CadastroAluno();
 
-            Console.Write("Nome: ");
-            var auxNome = Console.ReadLine();
-            while (!Aluno.VerificaNome(auxNome) || auxNome == null)
-            {   // nao ta verificando certo
-                Console.Write("O nome precisa conter somente letras! \nDigite novamente! \nNome: ");
-                auxNome = Console.ReadLine();
-            }
-            Console.WriteLine(auxNome);
-            //aluno.Nome = auxNome;
+            //Console.Write("Nome: ");
+            //var auxNome = Console.ReadLine();
+            //while (!Aluno.VerificaNome(auxNome) || auxNome == null)
+            //{   // nao ta verificando certo
+            //    Console.Write("O nome precisa conter somente letras! \nDigite novamente! \nNome: ");
+            //    auxNome = Console.ReadLine();
+            //}
+            //Console.WriteLine(auxNome);
+            //Console.Clear();
+            ////aluno.Nome = auxNome;
 
-            Console.Write("\nSobrenome: ");
-            string auxSobrenome = Console.ReadLine();
-            while (auxSobrenome == null)
-            {   // nao ta verificando certo
-                Console.Write("O Sobrenome não pode ser nulo. \nDigite novamente! \nSobrenome: ");
-                auxSobrenome = Console.ReadLine();
-            }
-            //aluno.Sobrenome = Console.ReadLine();
+            //Console.Write("\nSobrenome: ");
+            //string auxSobrenome = Console.ReadLine();
+            //while (auxSobrenome == null)
+            //{   // nao ta verificando certo
+            //    Console.Write("O Sobrenome não pode ser nulo. \nDigite novamente! \nSobrenome: ");
+            //    auxSobrenome = Console.ReadLine();
+            //}
+            //Console.Clear();
+            ////aluno.Sobrenome = Console.ReadLine();
 
-            // não digitar zerada 
+            //// não digitar zerada 
 
-            Console.Write("\nData: ");
-            aluno.DataNascimento = Convert.ToDateTime(Console.ReadLine());
-            while (!Aluno.VerificaData(aluno.DataNascimento))
-            {
-                Console.Write("a data de nascimento precisa ser anterior a 01/01/2002! \nDigite novamente! \nData: ");
-                aluno.DataNascimento = Convert.ToDateTime(Console.ReadLine());
-            }
-            Console.WriteLine(aluno.DataNascimento);
+            //Console.Write("\nData: ");
+            //aluno.DataNascimento = Convert.ToDateTime(Console.ReadLine());
+            //while (!Aluno.VerificaData(aluno.DataNascimento))
+            //{
+            //    Console.Write("a data de nascimento precisa ser anterior a 01/01/2002! \nDigite novamente! \nData: ");
+            //    aluno.DataNascimento = Convert.ToDateTime(Console.ReadLine());
+            //}
+            //Console.WriteLine(aluno.DataNascimento);
+            //Console.Clear();
 
             Console.Write("Cpf: ");
             string auxCpf = Console.ReadLine();
@@ -50,8 +53,9 @@ namespace BoletimPadawan
                 auxCpf = Console.ReadLine();
             }
             Console.WriteLine(auxCpf);
+            Console.Clear();
 
-            
+
             int aux = 0;
             while (aux == 0)
             {
@@ -64,9 +68,9 @@ namespace BoletimPadawan
                 {                   
                     if (instrucao == 1)
                     {
-                        Console.WriteLine("retorna ao meunu principal");
+                        Console.WriteLine("retornando ao meunu principal");
                         aux = 1;
-                        break;
+                        Console.WriteLine(aux);
                     }
                     else if(instrucao == 2)
                     {
@@ -84,16 +88,15 @@ namespace BoletimPadawan
                     {
                         Console.WriteLine("numero invalido");
                     }
-                    
+                    Console.WriteLine("dentro do if");
                 }
                 else
                 {
                     Console.WriteLine("Voce precisa digitar um numero" );
                 }
+                Console.WriteLine("dentro do while");
             }
-
-
-            Console.ReadKey();
+            Console.WriteLine("fora do while");
         }
     }
     
